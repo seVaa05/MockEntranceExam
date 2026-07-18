@@ -50,3 +50,57 @@ application-local.yml
 # Operating system
 .DS_Store
 Thumbs.db
+# Compiled Java files
+*.class
+
+# Logs
+*.log
+
+# BlueJ
+*.ctxt
+
+# Mobile Tools for Java
+.mtj.tmp/
+
+# Java package files
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Keep Maven Wrapper if present
+!backend/.mvn/wrapper/maven-wrapper.jar
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# React / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Java / Spring Boot
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/.idea/
+backend/*.iml
+
+# Environment and local configuration
+.env
+application-local.properties
+application-local.yml
+
+# IDE
+.idea/
+.vscode/
+
+# Operating system
+.DS_Store
+Thumbs.db
