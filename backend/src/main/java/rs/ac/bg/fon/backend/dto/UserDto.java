@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.backend.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +8,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public abstract class UserDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -15,5 +17,8 @@ public abstract class UserDto implements Serializable {
     private String lastName;
     private String email;
     private String password;
-    private Boolean active;
+    private boolean active;
+
+    public UserDto() {
+    }
 }

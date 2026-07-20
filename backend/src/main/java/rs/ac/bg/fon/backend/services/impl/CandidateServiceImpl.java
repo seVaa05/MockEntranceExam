@@ -1,36 +1,35 @@
 package rs.ac.bg.fon.backend.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import rs.ac.bg.fon.backend.dto.CandidateDto;
+import rs.ac.bg.fon.backend.entities.Candidate;
+import rs.ac.bg.fon.backend.repository.CandidateRepository;
 import rs.ac.bg.fon.backend.services.UserService;
 
 import java.util.List;
 
 @Service
-public class CandidateServiceImpl implements UserService<CandidateDto> {
+public class CandidateServiceImpl {
 
-    @Override
-    public CandidateDto createUserDto(CandidateDto userDto) {
+    private final CandidateRepository candidateRepository;
+
+    public CandidateServiceImpl( CandidateRepository candidateRepository) {
+        this.candidateRepository = candidateRepository;
+    }
+
+    public Candidate save(){
+        candidateRepository.save(new Candidate());
         return null;
     }
 
-    @Override
-    public CandidateDto getUserById(Long userId) {
-        return null;
+    public void delete(Long candidateId){
+        candidateRepository.deleteById(candidateId);
     }
 
-    @Override
-    public List<CandidateDto> getAllUser() {
-        return List.of();
+    public List<Candidate> findAll(){
+        return candidateRepository.findAll();
     }
 
-    @Override
-    public CandidateDto updateUser(Long userId, CandidateDto updatedUser) {
-        return null;
-    }
-
-    @Override
-    public void deleteUser(Long employeeId) {
-
-    }
 }

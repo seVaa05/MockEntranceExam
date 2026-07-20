@@ -20,5 +20,14 @@ public class Candidate extends User{
     @Column(name = "address", nullable = false, length = 100)
     private String address;
 
+    public Candidate() {
+    }
 
+    public Candidate(Long id, String firstName, String lastName, String email,
+                     String password, boolean active, String jmbg, String phone, String address) {
+        super(id, firstName, lastName, email, password, active);
+        this.jmbg = jmbg;
+        this.phone = phone;
+        this.address = address;
+    }
 }

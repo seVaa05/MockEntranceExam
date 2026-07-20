@@ -1,6 +1,7 @@
 package rs.ac.bg.fon.backend.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "User")
 @Inheritance(strategy = InheritanceType.JOINED)
+@AllArgsConstructor
 public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +30,8 @@ public abstract class User {
     private String password;
 
     @Column(name = "active", nullable = false)
-    private Boolean active;
+    private boolean active;
 
-
+    public User() {
+    }
 }
